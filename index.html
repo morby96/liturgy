@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Divine Liturgy</title>
+
+<style>
+body {
+  font-family: Georgia, serif;
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.7;
+  background-color: #fafafa;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  margin-top: 40px;
+  font-size: 1.3em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+  text-transform: capitalize;
+}
+
+.entry {
+  margin: 15px 0;
+}
+
+.priest {
+  color: #6b0000;
+  font-weight: bold;
+}
+
+.people {
+  color: #003366;
+  font-weight: bold;
+}
+
+.slavonic {
+  font-style: italic;
+  color: #555;
+  margin-top: 3px;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #e0e0e0;
+  margin: 15px 0;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Divine Liturgy of St. John Chrysostom</h1>
+
+<div id="content"></div>
+
+<script>
+fetch("chrysostom.json")
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("content");
+
+    let currentSection = "";
+
+    data.forEach(entry => {
+
+      // Add section heading if new section
+      if (entry.section !== currentSection) {
+        currentSection = entry.section;
+
+        const sectionHeader = document.createElement("div");
+        sectionHeader.className = "section-title";
+        sectionHeader.textContent = currentSection.replace(/_/g, " ");
+        container.appendChild(sectionHeader);
+      }
+
+      const entryDiv = document.createElement("div");
+      entryDiv.className = "entry";
+
+      const speaker = document.createElement("div");
+      speaker.className = entry.speaker;
+      speaker.textContent = entry.speaker;
+
+      const english = document.createElement("div");
+      english.textContent = entry.english;
+
+      const slavonic = document.createElement("div");
+      slavonic.className = "slavonic";
+      slavonic.textContent = entry.slavonic;
+
+      entryDiv.appendChild(speaker);
+      entryDiv.appendChild(english);
+      entryDiv.appendChild(slavonic);
+
+      container.appendChild(entryDiv);
+      container.appendChild(document.createElement("hr"));
+    });
+  })
+  .catch(error => {
+    document.getElementById("content").innerText = "Error loading liturgy.";
+    console.error(error);
+  });
+</script>
+
+</body>
+</html>
