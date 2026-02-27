@@ -7,16 +7,47 @@
 <style>
 body {
   font-family: Georgia, serif;
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 0 20px;
-  line-height: 1.7;
+  margin: 0;
   background-color: #fafafa;
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 40px;
+  padding: 20px 0;
+}
+
+/* Layout */
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 200px;
+  background-color: #eee;
+  padding: 20px;
+  box-sizing: border-box;
+  border-right: 1px solid #ccc;
+}
+
+.sidebar a {
+  display: block;
+  margin-bottom: 10px;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  overflow-x: hidden;
 }
 
 .section-title {
@@ -44,7 +75,7 @@ h1 {
   color: #003366;
 }
 
-/* Two-column layout for English and Slavonic */
+/* Columns */
 .text-columns {
   display: flex;
   gap: 20px;
@@ -54,7 +85,6 @@ h1 {
   flex: 1;
 }
 
-/* Optional: Slavonic styling */
 .slavonic {
   font-style: italic;
   color: #555;
@@ -66,8 +96,29 @@ hr {
   margin: 15px 0;
 }
 
-@media (max-width: 700px) {
-  /* Stack columns on small screens */
+/* Language toggle buttons */
+#toggle-buttons {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 6px 12px;
+  margin: 0 5px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #ccc;
+  }
   .text-columns {
     flex-direction: column;
   }
@@ -79,55 +130,104 @@ hr {
 
 <h1>Divine Liturgy of St. John Chrysostom</h1>
 
-<div id="content"></div>
+<div id="toggle-buttons">
+  <button onclick="setLanguage('side')">Side by Side</button>
+  <button onclick="setLanguage('english')">English Only</button>
+  <button onclick="setLanguage('slavonic')">Slavonic Only</button>
+</div>
+
+<div class="container">
+  <div class="sidebar" id="sidebar">
+    <!-- Section links will be generated dynamically -->
+  </div>
+
+  <div class="main-content" id="content">
+    <!-- Liturgy entries will go here -->
+  </div>
+</div>
 
 <script>
-// Fetch JSON with cache bust to ensure latest version
+let currentLanguage = 'side';
+let entries = [];
+let sections = new Set();
+
+function setLanguage(lang) {
+  currentLanguage = lang;
+  renderEntries();
+}
+
+function renderEntries() {
+  const container = document.getElementById("content");
+  container.innerHTML = ""; // clear previous
+
+  let currentSection = "";
+  entries.forEach(entry => {
+    // Section header
+    if (entry.section !== currentSection) {
+      currentSection = entry.section;
+      const sectionHeader = document.createElement("div");
+      sectionHeader.className = "section-title";
+      sectionHeader.id = currentSection; // ID for anchor
+      sectionHeader.textContent = currentSection.replace(/_/g, " ");
+      container.appendChild(sectionHeader);
+    }
+
+    const entryDiv = document.createElement("div");
+    entryDiv.className = "entry";
+
+    // Speaker
+    const speaker = document.createElement("div");
+    speaker.className = `speaker ${entry.speaker}`;
+    speaker.textContent = entry.speaker;
+    entryDiv.appendChild(speaker);
+
+    // Columns container
+    const columns = document.createElement("div");
+    columns.className = "text-columns";
+
+    const englishDiv = document.createElement("div");
+    englishDiv.textContent = entry.english;
+
+    const slavonicDiv = document.createElement("div");
+    slavonicDiv.className = "slavonic";
+    slavonicDiv.textContent = entry.slavonic;
+
+    if (currentLanguage === 'english') {
+      columns.appendChild(englishDiv);
+    } else if (currentLanguage === 'slavonic') {
+      columns.appendChild(slavonicDiv);
+    } else {
+      columns.appendChild(englishDiv);
+      columns.appendChild(slavonicDiv);
+    }
+
+    entryDiv.appendChild(columns);
+    container.appendChild(entryDiv);
+    container.appendChild(document.createElement("hr"));
+  });
+}
+
+function generateSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  sidebar.innerHTML = "";
+
+  sections.forEach(section => {
+    const link = document.createElement("a");
+    link.href = `#${section}`;
+    link.textContent = section.replace(/_/g, " ");
+    sidebar.appendChild(link);
+  });
+}
+
+// Fetch JSON with cache bust
 fetch("chrysostom.json?cacheBust=" + new Date().getTime())
   .then(response => response.json())
   .then(data => {
-    const container = document.getElementById("content");
-    let currentSection = "";
-
-    data.forEach(entry => {
-      // Section header
-      if (entry.section !== currentSection) {
-        currentSection = entry.section;
-        const sectionHeader = document.createElement("div");
-        sectionHeader.className = "section-title";
-        sectionHeader.textContent = currentSection.replace(/_/g, " ");
-        container.appendChild(sectionHeader);
-      }
-
-      const entryDiv = document.createElement("div");
-      entryDiv.className = "entry";
-
-      // Speaker
-      const speaker = document.createElement("div");
-      speaker.className = `speaker ${entry.speaker}`;
-      speaker.textContent = entry.speaker;
-      entryDiv.appendChild(speaker);
-
-      // Two-column container
-      const columns = document.createElement("div");
-      columns.className = "text-columns";
-
-      const englishDiv = document.createElement("div");
-      englishDiv.textContent = entry.english;
-
-      const slavonicDiv = document.createElement("div");
-      slavonicDiv.className = "slavonic";
-      slavonicDiv.textContent = entry.slavonic;
-
-      columns.appendChild(englishDiv);
-      columns.appendChild(slavonicDiv);
-
-      entryDiv.appendChild(columns);
-      container.appendChild(entryDiv);
-
-      // Separator
-      container.appendChild(document.createElement("hr"));
-    });
+    entries = data;
+    // Collect unique sections
+    data.forEach(e => sections.add(e.section));
+    generateSidebar();
+    renderEntries();
   })
   .catch(error => {
     document.getElementById("content").innerText = "Error loading liturgy.";
