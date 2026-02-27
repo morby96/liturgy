@@ -7,7 +7,7 @@
 <style>
 body {
   font-family: Georgia, serif;
-  max-width: 800px;
+  max-width: 900px;
   margin: 40px auto;
   padding: 0 20px;
   line-height: 1.7;
@@ -31,26 +31,46 @@ h1 {
   margin: 15px 0;
 }
 
+.speaker {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
 .priest {
   color: #6b0000;
-  font-weight: bold;
 }
 
 .people {
   color: #003366;
-  font-weight: bold;
 }
 
+/* Two-column layout for English and Slavonic */
+.text-columns {
+  display: flex;
+  gap: 20px;
+}
+
+.text-columns div {
+  flex: 1;
+}
+
+/* Optional: Slavonic styling */
 .slavonic {
   font-style: italic;
   color: #555;
-  margin-top: 3px;
 }
 
 hr {
   border: none;
   border-top: 1px solid #e0e0e0;
   margin: 15px 0;
+}
+
+@media (max-width: 700px) {
+  /* Stack columns on small screens */
+  .text-columns {
+    flex-direction: column;
+  }
 }
 </style>
 </head>
@@ -62,19 +82,17 @@ hr {
 <div id="content"></div>
 
 <script>
-fetch("chrysostom.json")
+// Fetch JSON with cache bust to ensure latest version
+fetch("chrysostom.json?cacheBust=" + new Date().getTime())
   .then(response => response.json())
   .then(data => {
     const container = document.getElementById("content");
-
     let currentSection = "";
 
     data.forEach(entry => {
-
-      // Add section heading if new section
+      // Section header
       if (entry.section !== currentSection) {
         currentSection = entry.section;
-
         const sectionHeader = document.createElement("div");
         sectionHeader.className = "section-title";
         sectionHeader.textContent = currentSection.replace(/_/g, " ");
@@ -84,22 +102,30 @@ fetch("chrysostom.json")
       const entryDiv = document.createElement("div");
       entryDiv.className = "entry";
 
+      // Speaker
       const speaker = document.createElement("div");
-      speaker.className = entry.speaker;
+      speaker.className = `speaker ${entry.speaker}`;
       speaker.textContent = entry.speaker;
-
-      const english = document.createElement("div");
-      english.textContent = entry.english;
-
-      const slavonic = document.createElement("div");
-      slavonic.className = "slavonic";
-      slavonic.textContent = entry.slavonic;
-
       entryDiv.appendChild(speaker);
-      entryDiv.appendChild(english);
-      entryDiv.appendChild(slavonic);
 
+      // Two-column container
+      const columns = document.createElement("div");
+      columns.className = "text-columns";
+
+      const englishDiv = document.createElement("div");
+      englishDiv.textContent = entry.english;
+
+      const slavonicDiv = document.createElement("div");
+      slavonicDiv.className = "slavonic";
+      slavonicDiv.textContent = entry.slavonic;
+
+      columns.appendChild(englishDiv);
+      columns.appendChild(slavonicDiv);
+
+      entryDiv.appendChild(columns);
       container.appendChild(entryDiv);
+
+      // Separator
       container.appendChild(document.createElement("hr"));
     });
   })
