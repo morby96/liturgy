@@ -67,12 +67,15 @@ h1 {
   margin-bottom: 5px;
 }
 
+/* Speaker colors with capitalized display */
 .speaker.priest {
-  color: #6b0000;
+  color: #6b0000; /* red */
+  text-transform: capitalize;
 }
 
 .speaker.people {
-  color: #003366;
+  color: #003366; /* blue */
+  text-transform: capitalize;
 }
 
 /* Columns */
@@ -156,6 +159,10 @@ function setLanguage(lang) {
   renderEntries();
 }
 
+function capitalize(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+}
+
 function renderEntries() {
   const container = document.getElementById("content");
   container.innerHTML = ""; // clear previous
@@ -177,8 +184,8 @@ function renderEntries() {
 
     // Speaker
     const speaker = document.createElement("div");
-    speaker.className = `speaker ${entry.speaker}`;
-    speaker.textContent = entry.speaker;
+    speaker.className = `speaker ${entry.speaker.toLowerCase()}`;
+    speaker.textContent = capitalize(entry.speaker); // display capitalized
     entryDiv.appendChild(speaker);
 
     // Columns container
