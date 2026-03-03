@@ -1,11 +1,19 @@
 [
   {
     "section": "great_litany",
+    "speaker": "rubric",
+    "type": "rubric",
+    "english": "A '+' indicates where the people typically cross themselves.",
+    "slavonic": "",
+    "id": "6961b16e-6fc3-42d4-8030-24f0a8123157"
+  },
+  {
+    "section": "great_litany",
     "speaker": "Priest",
     "type": "petition",
     "english": "Blessed is the kingdom of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto            ages of ages.",
     "slavonic": "Blagosloveno tsarstvo Otsa i Sina i Svyatago Duha, ninye i prisno i vo vyeko vyekov.",
-    "id": "94adc52f-a4cc-419e-9846-b9f9fb134133"
+    "id": "2bef55bc-5d29-416b-9e43-3ce5dd3f96ba"
   },
   {
     "section": "great_litany",
@@ -13,7 +21,7 @@
     "type": "response",
     "english": "Amen.",
     "slavonic": "Amin.",
-    "id": "bde44abc-96d7-438a-9360-76ed62d61005"
+    "id": "56273040-829d-4500-91b6-3a5e9cb6c7af"
   },
   {
     "section": "great_litany",
@@ -21,7 +29,7 @@
     "type": "petition",
     "english": "In peace let us pray to the Lord.",
     "slavonic": "Mirom Gospodu pomolimsya.",
-    "id": "adff46e8-340a-41e8-aa7f-6c8446521d3e"
+    "id": "7424959e-0887-4c54-99d6-39d85b4339d8"
   },
   {
     "section": "great_litany",
@@ -29,7 +37,7 @@
     "type": "response",
     "english": "Lord, have mercy.",
     "slavonic": "Gospodi, pomiluy.",
-    "id": "14243942-21ed-492f-b0f0-8e92020cc73f"
+    "id": "1ac00115-939b-4f30-b06c-2d5963467191"
   },
   {
     "section": "great_litany",
@@ -37,7 +45,7 @@
     "type": "petition",
     "english": "For the peace from above and the salvation of our souls, let us pray to the Lord.",
     "slavonic": "O svishnyem mirye, i spaseniyi dush nashih, Gospodu pomolimsya.",
-    "id": "0b58e738-4011-4399-9d8e-1b07e0bb0123"
+    "id": "06329fc1-73db-4b03-8664-2832ef5c78b8"
   },
   {
     "section": "great_litany",
@@ -45,7 +53,7 @@
     "type": "response",
     "english": "Lord, have mercy.",
     "slavonic": "Gospodi, pomiluy.",
-    "id": "58bcf32d-ac31-4133-8b0b-a6753bd8b760"
+    "id": "633f03d4-5aa5-4c3c-85d7-1d80bdba41dd"
   },
   {
     "section": "great_litany",
@@ -53,7 +61,7 @@
     "type": "petition",
     "english": "For the peace of the whole world, for the good estate of the Holy Churches of God, and for the union of all, let us pray to the Lord.",
     "slavonic": "O mirye vsego mira, blagostoyaniyi svyatih Bozhiyih tserkvey vsyeh, Gospodu pomolimsya.",
-    "id": "1152e430-f356-40e5-a90a-b07d031fdfdb"
+    "id": "3d5e51da-b93c-4109-b1a6-789b6c214707"
   },
   {
     "section": "great_litany",
@@ -61,7 +69,7 @@
     "type": "response",
     "english": "Lord, have mercy.",
     "slavonic": "Gospodi, pomiluy.",
-    "id": "1f48737c-c0b0-4e37-a29a-aa3894366e99"
+    "id": "44a51d05-5bd7-4a4a-b349-6743fe509b66"
   },
   {
     "section": "great_litany",
@@ -69,7 +77,7 @@
     "type": "petition",
     "english": "For this Holy House and for those that enter it with faith, reverence and the fear of God, let us pray to the Lord.",
     "slavonic": "O svyatyem hramye sem, i s'vyeroyu, blagogovyeniem i strahom Bozhiyim vhodyaschchih von, Gospodu pomolimsya.",
-    "id": "8c1f73da-f097-4f34-806a-40d017dcc85e"
+    "id": "eb826177-66f4-4005-abc2-99ed51adf810"
   },
   {
     "section": "great_litany",
@@ -77,7 +85,7 @@
     "type": "response",
     "english": "Lord, have mercy.",
     "slavonic": "Gospodi, pomiluy.",
-    "id": "b45f855c-f588-4452-825d-30fde96bbd2b"
+    "id": "de30c392-c6d2-40e8-8fed-36e9716ebba3"
   },
   {
     "section": "great_litany",
@@ -85,7 +93,7 @@
     "type": "petition",
     "english": "For our Most Holy Patriarch [NAME], and for our Bishop [NAME], for the venerable priesthood, for the diaconate in Christ, for all the clergy and the people, let us pray to the Lord.",
     "slavonic": "O Svyatyeyshem Patriyarsye nashem [IME] i o Episkopye nashem [IME], chestnyem presviterstvye, vo Hristye diakonstvye, o vsem pritchtye i lyudeh, Gospodu pomolimsya.",
-    "id": "5b051d3c-7a02-4e5e-b65f-d6bff4e045cb"
+    "id": "2c25c352-dae2-4703-933e-c9413ba9d91f"
   },
   {
     "section": "great_litany",
@@ -93,6 +101,158 @@
     "type": "response",
     "english": "Lord, have mercy.",
     "slavonic": "Gospodi, pomiluy.",
-    "id": "f29e0c51-a245-4890-822f-73b0dad07e28"
+    "id": "19b4b6a3-faf8-4603-9a04-16537704efb6"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "For the honorable and God-protected president of this country, for the government and Christ-loving armed forces, let us pray to the Lord.",
+    "slavonic": "O chestnyem i Bogohranimon prezidentye i pravitelystvye strani seya i vsem voinstvye nasem, Gospodu pomolimsya.",
+    "id": "530b11e5-204f-495e-a093-1d65a51903b6"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "Gospodi, pomiluy.",
+    "id": "038ce633-e8e1-4a9c-974c-2aa6058013f4"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "To enable them to subdue every enemy and adversary, let us pray to the Lord.",
+    "slavonic": "O posobiti i pokoriti pod nozye ih vsyakago vraga i supostata, Gospodu pomolimsya.",
+    "id": "92fbf76a-a5a3-409a-bb79-3a312552e06f"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "Gospodi, pomiluy.",
+    "id": "aa2385ca-6719-413b-9062-2549bed97ea9"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "For this city, for every city and countryside, and for the faithful that dwell in them, let us pray to the Lord.",
+    "slavonic": "O gradye sem, vsyakom gradye, stranye, i vyeroyu zhivushchih v'nih, Gospodu pomolimsya.",
+    "id": "3762dcaf-16f5-4b57-baea-9794847a271a"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "Gospodi, pomiluy.",
+    "id": "7c873b2a-d54a-4768-a618-746697c5fdef"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "For seasonable weather, for abundance of the fruits of the earth, and for peaceful times, let us pray to the Lord.",
+    "slavonic": "O blagorastvoreniyi vozduhov, o izobiliyi plodov zemnih i vremenyeh mirnih, Gospodu pomolimsya.",
+    "id": "c124cfd8-9b36-4d55-9d5a-0b9569d979ec"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "Gospodi, pomiluy.",
+    "id": "4952a3cd-20a8-48a5-97c6-297476b51995"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "For travelers by sea, by land, by air; for the sick and the suffering; for captives and their salvation, let us pray to the Lord.",
+    "slavonic": "O plavayushchih, puteshestvuyushchih, neduguyushchih, strazhdushchih, plyenennih, i o spaseniyi ih, Gospodu pomolimsya.",
+    "id": "99e663ad-2f7a-417b-981a-abc80d23d0ae"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "Gospodi, pomiluy.",
+    "id": "f69946f8-f06b-4400-a130-69ee7f52b34d"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "for our deliverance from all tribulation, wrath and want, let us pray to the Lord.",
+    "slavonic": "O izbavitisya nam ot vsyakiya skorbi gnyeva i nuzhdi Gospodu pomolimsya.",
+    "id": "d62dd11c-b318-4135-aae0-1ec0e6086f2e"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "Gospodi, pomiluy.",
+    "id": "dca62aae-2bf0-40f0-b10c-20b752850f42"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "Protect us, save us, help us, have mercy on us, and protect us, O God, by Thy grace.",
+    "slavonic": "Zastupi, spasi, pomiluy i sohrani nas, Bozhe, Tvoyeyu blagodatiyu.",
+    "id": "91355269-0f5b-42d2-8188-580517ebc6f5"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "Gospodi, pomiluy.",
+    "id": "bc9c7143-c9fa-4468-98aa-18dabfbe1a90"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "Commemorating our most holy, most pure, most blessed and glorious lady, the mother of God and ever-virgin Mary, with all the saints, let us comment ourselves and one another, and our whole life unto Christ our God.",
+    "slavonic": "Presvyatuyu, prechistuyu, preblagoslovennuyu slavnuyu vladichitsu nashu Bogoroditsu i prisnodyevu Mariyu, so vsyemi svyatimi pomyanuvshe, sami sebe, i drug druga, i ves zhivot nash Hristu Bogu predadim.",
+    "id": "8d2ef0f0-a295-4361-bb26-ba546c31db05"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "To Thee, O Lord.",
+    "slavonic": "Tebye, Gospodi.",
+    "id": "8d18e5b1-a98f-4579-8ff7-63af0963cb13"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "rubric",
+    "type": "rubric",
+    "english": "The Priest quietly says the prayer of the First Antiphon: 'O Lord our God, Whose power is ineffable...'",
+    "slavonic": "...",
+    "id": "e37b7360-cfee-4bfb-9491-51fdf9437d9e"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "For unto Thee are due the glory, honor, and worship, to the Father, and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages.",
+    "slavonic": "Yako podobaet Tebye vsyakaya slava, chest i poklonenie, Otsu, i Sinu, i Svyatomu Duhu, ninye i prisno i vo vyeki vyekov.",
+    "id": "b93a58bf-c4da-46d7-a2b9-9e55c849870d"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "People",
+    "type": "response",
+    "english": "Amen.",
+    "slavonic": "Amin.",
+    "id": "d09b2eb4-5e8c-4fa7-9b79-03cc15aa3154"
   }
 ]
