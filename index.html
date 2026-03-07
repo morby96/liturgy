@@ -172,7 +172,7 @@ return str.charAt(0).toUpperCase()+str.slice(1).toLowerCase()
 
 function loadLiturgy(file){
 
-fetch("data/"+file+"?cacheBust="+Date.now())
+fetch(file+"?cacheBust="+Date.now())
 
 .then(r=>r.json())
 
