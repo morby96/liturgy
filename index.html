@@ -2,244 +2,315 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Divine Liturgy</title>
+<title>Orthodox Liturgies</title>
 
 <style>
-body {
-  font-family: Georgia, serif;
-  margin: 0;
-  background-color: #fafafa;
+
+body{
+font-family:Georgia,serif;
+margin:0;
+background:#fafafa;
 }
 
-h1 {
-  text-align: center;
-  padding: 20px 0;
+h1{
+text-align:center;
+padding:20px 0;
 }
 
-/* Layout */
-.container {
-  display: flex;
-  min-height: 100vh;
+.container{
+display:flex;
+min-height:100vh;
 }
 
-/* Sidebar */
-.sidebar {
-  width: 200px;
-  background-color: #eee;
-  padding: 20px;
-  box-sizing: border-box;
-  border-right: 1px solid #ccc;
+.sidebar{
+width:220px;
+background:#eee;
+padding:20px;
+box-sizing:border-box;
+border-right:1px solid #ccc;
 }
 
-.sidebar a {
-  display: block;
-  margin-bottom: 10px;
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
+.sidebar a{
+display:block;
+margin-bottom:10px;
+text-decoration:none;
+font-weight:bold;
+color:#333;
 }
 
-.sidebar a:hover {
-  text-decoration: underline;
+.sidebar a:hover{
+text-decoration:underline;
 }
 
-/* Main content */
-.main-content {
-  flex: 1;
-  padding: 20px;
-  overflow-x: hidden;
+.main{
+flex:1;
+padding:25px;
 }
 
-.section-title {
-  margin-top: 40px;
-  font-size: 1.3em;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 5px;
-  text-transform: capitalize;
+.section-title{
+margin-top:40px;
+font-size:1.3em;
+border-bottom:1px solid #ccc;
+padding-bottom:5px;
 }
 
-.entry {
-  margin: 15px 0;
+.entry{
+margin:15px 0;
 }
 
-.speaker {
-  font-weight: bold;
-  margin-bottom: 5px;
+.speaker{
+font-weight:bold;
+margin-bottom:5px;
 }
 
-/* Speaker colors with capitalized display */
-.speaker.priest {
-  color: #6b0000; /* red */
-  text-transform: capitalize;
+.speaker.priest{
+color:#6b0000;
 }
 
-.speaker.people {
-  color: #003366; /* blue */
-  text-transform: capitalize;
+.speaker.people{
+color:#003366;
 }
 
-/* Columns */
-.text-columns {
-  display: flex;
-  gap: 20px;
+.text-columns{
+display:flex;
+gap:25px;
 }
 
-.text-columns div {
-  flex: 1;
+.text-columns div{
+flex:1;
 }
 
-.slavonic {
-  font-style: italic;
-  color: #555;
+.slavonic{
+font-style:italic;
+color:#555;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #e0e0e0;
-  margin: 15px 0;
+hr{
+border:none;
+border-top:1px solid #e0e0e0;
+margin:18px 0;
 }
 
-/* Language toggle buttons */
-#toggle-buttons {
-  text-align: center;
-  margin-bottom: 30px;
+.controls{
+text-align:center;
+margin-bottom:20px;
 }
 
-button {
-  padding: 6px 12px;
-  margin: 0 5px;
-  font-size: 1em;
-  cursor: pointer;
+button,select{
+padding:6px 12px;
+margin:5px;
+font-size:1em;
 }
 
-/* Responsive */
-@media (max-width: 800px) {
-  .container {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ccc;
-  }
-  .text-columns {
-    flex-direction: column;
-  }
+@media(max-width:800px){
+
+.container{
+flex-direction:column;
 }
+
+.sidebar{
+width:100%;
+border-right:none;
+border-bottom:1px solid #ccc;
+}
+
+.text-columns{
+flex-direction:column;
+}
+
+}
+
 </style>
 </head>
 
+
 <body>
 
-<h1>Divine Liturgy of St. John Chrysostom</h1>
+<h1>Orthodox Liturgies</h1>
 
-<div id="toggle-buttons">
-  <button onclick="setLanguage('side')">Side by Side</button>
-  <button onclick="setLanguage('english')">English Only</button>
-  <button onclick="setLanguage('slavonic')">Slavonic Only</button>
+<div class="controls">
+
+<label><strong>Select Liturgy:</strong></label>
+
+<select id="liturgySelect" onchange="loadLiturgy(this.value)">
+<option value="chrysostom.json">Divine Liturgy of St. John Chrysostom</option>
+<option value="presanctified.json">Liturgy of the Presanctified Gifts</option>
+</select>
+
+<br>
+
+<button onclick="setLanguage('side')">Side by Side</button>
+<button onclick="setLanguage('english')">English</button>
+<button onclick="setLanguage('slavonic')">Slavonic</button>
+
 </div>
 
 <div class="container">
-  <div class="sidebar" id="sidebar">
-    <!-- Section links will be generated dynamically -->
-  </div>
 
-  <div class="main-content" id="content">
-    <!-- Liturgy entries will go here -->
-  </div>
+<div class="sidebar" id="sidebar"></div>
+
+<div class="main" id="content"></div>
+
 </div>
 
 <script>
-let currentLanguage = 'side';
-let entries = [];
-let sections = new Set();
 
-function setLanguage(lang) {
-  currentLanguage = lang;
-  renderEntries();
+let entries=[]
+let currentLanguage="side"
+
+
+function setLanguage(lang){
+currentLanguage=lang
+renderEntries()
 }
 
-function capitalize(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+
+function capitalize(str){
+return str.charAt(0).toUpperCase()+str.slice(1).toLowerCase()
 }
 
-function renderEntries() {
-  const container = document.getElementById("content");
-  container.innerHTML = ""; // clear previous
 
-  let currentSection = "";
-  entries.forEach(entry => {
-    // Section header
-    if (entry.section !== currentSection) {
-      currentSection = entry.section;
-      const sectionHeader = document.createElement("div");
-      sectionHeader.className = "section-title";
-      sectionHeader.id = currentSection; // ID for anchor
-      sectionHeader.textContent = currentSection.replace(/_/g, " ");
-      container.appendChild(sectionHeader);
-    }
+function loadLiturgy(file){
 
-    const entryDiv = document.createElement("div");
-    entryDiv.className = "entry";
+fetch("data/"+file+"?cacheBust="+Date.now())
 
-    // Speaker
-    const speaker = document.createElement("div");
-    speaker.className = `speaker ${entry.speaker.toLowerCase()}`;
-    speaker.textContent = capitalize(entry.speaker); // display capitalized
-    entryDiv.appendChild(speaker);
+.then(r=>r.json())
 
-    // Columns container
-    const columns = document.createElement("div");
-    columns.className = "text-columns";
+.then(data=>{
 
-    const englishDiv = document.createElement("div");
-    englishDiv.textContent = entry.english;
+entries=data
 
-    const slavonicDiv = document.createElement("div");
-    slavonicDiv.className = "slavonic";
-    slavonicDiv.textContent = entry.slavonic;
+generateSidebar()
 
-    if (currentLanguage === 'english') {
-      columns.appendChild(englishDiv);
-    } else if (currentLanguage === 'slavonic') {
-      columns.appendChild(slavonicDiv);
-    } else {
-      columns.appendChild(englishDiv);
-      columns.appendChild(slavonicDiv);
-    }
+renderEntries()
 
-    entryDiv.appendChild(columns);
-    container.appendChild(entryDiv);
-    container.appendChild(document.createElement("hr"));
-  });
+})
+
+.catch(e=>{
+
+document.getElementById("content").innerText="Error loading liturgy."
+
+console.error(e)
+
+})
+
 }
 
-function generateSidebar() {
-  const sidebar = document.getElementById("sidebar");
-  sidebar.innerHTML = "";
 
-  sections.forEach(section => {
-    const link = document.createElement("a");
-    link.href = `#${section}`;
-    link.textContent = section.replace(/_/g, " ");
-    sidebar.appendChild(link);
-  });
+function generateSidebar(){
+
+const sidebar=document.getElementById("sidebar")
+
+sidebar.innerHTML=""
+
+const seen=new Set()
+
+entries.forEach(entry=>{
+
+if(!seen.has(entry.section)){
+
+seen.add(entry.section)
+
+const link=document.createElement("a")
+
+link.href="#"+entry.section
+
+link.textContent=entry.section_title || entry.section.replace(/_/g," ")
+
+sidebar.appendChild(link)
+
 }
 
-// Fetch JSON with cache bust
-fetch("chrysostom.json?cacheBust=" + new Date().getTime())
-  .then(response => response.json())
-  .then(data => {
-    entries = data;
-    // Collect unique sections
-    data.forEach(e => sections.add(e.section));
-    generateSidebar();
-    renderEntries();
-  })
-  .catch(error => {
-    document.getElementById("content").innerText = "Error loading liturgy.";
-    console.error(error);
-  });
+})
+
+}
+
+
+function renderEntries(){
+
+const container=document.getElementById("content")
+
+container.innerHTML=""
+
+let currentSection=""
+
+entries.forEach(entry=>{
+
+if(entry.section!==currentSection){
+
+currentSection=entry.section
+
+const header=document.createElement("div")
+
+header.className="section-title"
+
+header.id=currentSection
+
+header.textContent=entry.section_title || entry.section.replace(/_/g," ")
+
+container.appendChild(header)
+
+}
+
+const entryDiv=document.createElement("div")
+
+entryDiv.className="entry"
+
+const speaker=document.createElement("div")
+
+speaker.className="speaker "+entry.speaker.toLowerCase()
+
+speaker.textContent=capitalize(entry.speaker)
+
+entryDiv.appendChild(speaker)
+
+const columns=document.createElement("div")
+
+columns.className="text-columns"
+
+const eng=document.createElement("div")
+
+eng.textContent=entry.english
+
+const slav=document.createElement("div")
+
+slav.className="slavonic"
+
+slav.textContent=entry.slavonic
+
+if(currentLanguage==="english"){
+
+columns.appendChild(eng)
+
+}
+
+else if(currentLanguage==="slavonic"){
+
+columns.appendChild(slav)
+
+}
+
+else{
+
+columns.appendChild(eng)
+
+columns.appendChild(slav)
+
+}
+
+entryDiv.appendChild(columns)
+
+container.appendChild(entryDiv)
+
+container.appendChild(document.createElement("hr"))
+
+})
+
+}
+
+
+loadLiturgy("chrysostom.json")
+
 </script>
 
 </body>
