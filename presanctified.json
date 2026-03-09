@@ -1,19 +1,27 @@
 [
   {
     "section": "opening",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "Bless, Master",
+    "slavonic": "...",
+    "id": "3d40ddab-0256-4a44-982e-6f871b05db74"
+  },
+  {
+    "section": "opening",
     "speaker": "Priest",
     "type": "petition",
     "english": "Blessed is the Kingdom of the Father, and of the Son, and of the Holy Spirit, now and ever, and unto ages of ages",
     "slavonic": "...",
-    "id": "606efd15-4b04-4f17-a53b-760b9132ead8"
+    "id": "4146ecd2-5fec-4cf5-bebb-6c556021bb89"
   },
   {
     "section": "opening",
-    "speaker": "People",
+    "speaker": "Choir",
     "type": "response",
     "english": "Amen.",
     "slavonic": "...",
-    "id": "f6ccc477-8def-4bb5-be0b-b7d74f57eb5b"
+    "id": "65233fa7-0d5d-4a01-80bf-45b22d4b8fc3"
   },
   {
     "section": "opening",
@@ -21,7 +29,7 @@
     "type": "prayer",
     "english": "Come, let us worship God, our King. Come, let us worship and fall down before Christ, our King and our God. Come, let us worship and fall down before Christ Himself, our King and our God.",
     "slavonic": "...",
-    "id": "74932a02-9b56-4396-92fa-9d27eee150a8"
+    "id": "174168db-77a3-4a93-836f-74008f56214a"
   },
   {
     "section": "opening",
@@ -29,7 +37,7 @@
     "type": "prayer",
     "english": "Psalm 104: Bless, the Lord, O my soul! O Lord my God, Thou are very great! Thou art clothed with honor and majesty, who coverest Thyself with light as a garment, who hast stretched out the heavens like a tent, who hast laid the beams of Thy chambers on the waters, who makest the clouds Thy chariot, who ridest on the wings of the wind, who makest the winds Thy messengers, fire and flame Thy ministers. Thou didst set the earth on its foundations, so that it should never be shaken, Thou didst cover it with the deep as with a garment; the waters stood above the mountains. At Thy rebuke they fled; at the sound of Thy thunder they took flight. The mountains rose, the valleys sank down to the place which Thou didst appoint for them. Thou didst set a bound which they should not pass, so that they might not again cover the earth. Thou makest springs gush forth in the valleys; they flow between the hills, they give drink to every beast of the field; the wild asses quench their thirst. By them the birds of the air have their habitation; they sing among the branches. From thy lofty abode Thou waterest the mountains; the earth is satisfied with the fruit of Thy work. Thou dost cause the grass to grow for cattle, and the plants for man to cultivate, that he may bring forth food from the earth, and wine to gladden the heart of man, oil to make his face shine, and bread to strengthen man's heart. The trees of the Lord are watered abundantly, the cedars of Lebanon which are planted. In them the birds build their nests; the stork has her home in the fir trees. The high mountains are for the wild goats; the rocks are a refuge for the badgers. Thou hast made the moon to mark the seasons; the sun knows its time for setting. Thou makest darkness, and it is night, when all the beasts of the forest creep forth. The young lions roar for their prey, seeking their food from God. When the sun rises they get them away, and lie down in their dens. Man goes forth to his work and to his labor until the evening. O Lord, how manifold are Thy works! In wisdom hast Thou made them all; the earth is full of Thy creatures. Yonder is the sea, great and wide, which teems with things innumberable, living things both small and great. There go the ships, and Leviathan which Thou didst form to sport in it. These all look to Thee, to give them their food in due season. When Thou givest to them, they gather it up; when Thou openest Thy hand, they are filled with good things. When Thou hidest Thy face, they are dismayed; when Thou takest away from their breath, they die and return to their dust. When Thou sendest forth thy Spirit, they are created; anf Thou renewest the face of the ground. May the glory of the Lord endure forever, may the Lord rejoice in His works, who looks on the earth and it trembles, who touches the mountains, and they smoke! I will sing to the Lord as long as I live; I will sing praise to my God while I have being. May my meditations be pleasing to Him, for I rejoice in the Lord. Let sinners be consumed from the earth, and let the wicked be no more! Bless the Lord O my soul! Praise the Lord!",
     "slavonic": "..",
-    "id": "968d4e96-a9bc-4bbf-95a3-3e28066af0e4"
+    "id": "0262afa0-da96-4441-8ae1-ee1e69e4f813"
   },
   {
     "section": "opening",
@@ -37,7 +45,7 @@
     "type": "prayer",
     "english": "+Glory to the Father and to the Son, and to the Holy Spirit, now and ever, and unto ages of ages. Amen.",
     "slavonic": "+...",
-    "id": "e5644a3f-6b0e-4ff8-909f-756e3fd89dd5"
+    "id": "132aa2e7-aef2-43dc-9e18-3d2ad6f0a096"
   },
   {
     "section": "opening",
@@ -45,6 +53,246 @@
     "type": "prayer",
     "english": "Alleluia, Alleluia, Alleluia, +Glory to Thee, O God. (x3)",
     "slavonic": "...",
-    "id": "068f0a7b-b447-48ac-b338-786ff982e846"
+    "id": "457e2cac-7625-4227-b71b-529cae70821d"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "In peace let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "2081230d-8eda-458e-8dea-5cf148f361f6"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "133c0869-792d-43a9-add7-513d49e86e34"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For the peace from above and for the salvation of our souls, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "9053d5d7-cd99-4af5-a32d-a2ee71626501"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "4ab82f12-38ed-4239-986b-d70a8f994681"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For the peace of the whole world, for the welfare of the holy churches of God, and for the union of all, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "d451ab74-242b-48ed-a4bf-cd392f7272fc"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "8da8332b-b546-4fc1-a273-704ba007ce9b"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For this holy house and for those who enter with faith, reverence, and the fear of God, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "52c2e7be-cd4b-425d-9f88-fc59f24cbdac"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "5aca39c3-f5ff-46e7-8283-ffe587639078"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For the holy Orthodox patriarchs, for our Metropolitan _______, for our Bishop _______, for the honorable priesthood, for the diaconate in Christ, for all the clergy and the people, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "9458d4e1-9593-42e4-81e1-dec08e1b3d0e"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "a9b9545e-306f-43c1-8a57-e18c65a2eec0"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For the president of our country, for all civil authorities, and for our Christ-loving armed forces, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "01425b23-c12c-443c-bc9a-35430085cbcf"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "d9db54b8-4f2c-49b1-8f2c-dc538a27573c"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For this city, for every city and country, and for the faithful dwelling in them, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "7dd09e23-2dfd-447a-afcf-83d6e60a1dc5"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "3382d884-f8cb-4991-a22b-050708ebd489"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For seasonable weather, for abundance of the fruits of the earth, and for peaceful times, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "2169e3b6-af2f-405b-acdd-624ad6fcbec6"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "3ce301cd-362f-4ad6-9f00-62a291a255c9"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For travelers by land, by sea, by air; for the sick and the suffering; for captives and their salvation, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "80a7ebe9-5239-4d8e-9a05-8319c04a318c"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "77fffe4b-81d0-4449-968c-8351e55a4376"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "For our deliverance from all affliction, wrath, danger, and necessity, let us pray to the Lord.",
+    "slavonic": "...",
+    "id": "57b231e1-3803-4048-b734-f968097b6805"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "0fc669ec-e3bb-4147-a871-41bb643cc596"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "Help us, save us, have mercy on us, and keep us O God, by Thy grace.",
+    "slavonic": "...",
+    "id": "d382486d-0646-4991-891c-e940198ace62"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Lord, have mercy.",
+    "slavonic": "...",
+    "id": "7fc35f36-d256-44d7-abeb-fc8da3c67813"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Deacon",
+    "type": "petition",
+    "english": "+Commemorating our most holy, most pure, most blessed and glorious Theotokos and ever-virgin Mary, with all the saints, let us comment ourselves and each other, and all our life until Christ our God.",
+    "slavonic": "...",
+    "id": "360e4b74-23e3-494b-bb8c-aa0c55710fb2"
+  },
+  {
+    "section": "great_litany",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "To Thee, O Lord.",
+    "slavonic": "...",
+    "id": "bbf3f2db-a870-4662-853f-4c691a794cc6"
+  },
+  {
+    "section": "first_antiphon",
+    "speaker": "Priest",
+    "type": "Prayer of the 1st Antiphon",
+    "english": "O Lord, compassionate and merciful, long- suffering and of great mercy, give heed to our prayer, and attend to the voice of our supplication. Work upon us a sign for good. Guide us in Thy way, that we may walk in Thy truth. Gladden our hearts that we may fear Thy holy name. For Thou art great and works wonders. Thou alone art none like unto Thee, O Lord, powerful in mercy and good in might, to help and to comfort and to save all those who hope in Thy holy name.",
+    "slavonic": "...",
+    "id": "f80ec830-8224-46cc-9256-dfa026c6eb1d"
+  },
+  {
+    "section": "first_antiphon",
+    "speaker": "Priest",
+    "type": "petition",
+    "english": "+For unto Thee are due all glory, honor and worship; to the Father, and to the Son, and to the Holy Spirit, now and ever and unto ages of ages.",
+    "slavonic": "...",
+    "id": "b5412129-2ef0-4298-95cc-b7a9adbf9b54"
+  },
+  {
+    "section": "first_antiphon",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Amen",
+    "slavonic": "",
+    "id": "0c64ae89-a033-46d2-93b2-c130edf27a9c"
+  },
+  {
+    "section": "first_antiphon",
+    "speaker": "Choir",
+    "type": "hymn",
+    "english": "Psalms 120-124: In my distress I cry unto the Lord, that He may answer me. Deliver me, O Lord, from lying lips, from a deceitful tongue. What shall be given to you, and what more shall be done to you, you deceitful tongue. A warrior's sharp arrows with glowing coals of the broom tree. Woe to me that I sojourn in Meshech, that I live among the tents of Kedar! Too long have I had my dwelling among those who hate peace. I am for peace; but when I speak, they are for war. I lift up my eyes to the hills From where does my help come from? My help comes from the LORD, Who made heaven and earth. He will not let your foot be moved He who keeps you will not slumber; Behold He who keeps Israel, will neither slumber nor sleep. The Lord is your Keeper the LORD is your shade at your right hand; The sun will not smite you by day, nor the moon by night. The LORD will keep you from all evil He will keep your life. The Lord will keep your going out and your coming in From this time forth and forever more. I was glad when they said to me, 'Let us go to the house of the LORD.' Our feet have been standing within your gates, O Jerusalem. Jerusalem is built like a city bound firmly together. To which tribes go up The tribes of the LORD, as was decreed for Israel, To give thanks to the name of the LORD. There the thrones for judgment were set, the thrones of the house of David. Pray for the peace of Jerusalem: 'May they prosper who love you May there be peace within your walls and security within your towers' For my brethren and companions’ sake I will say 'Peace be within you.' For the sake of the house of the LORD our God, I will seek your good. To Thee, I lift up mine eyes, O Thou who art enthroned in the heavens. Behold, as the eyes of slaves look to the hand of their master, as the eyes of a maid look to the hand of her mistress, So our eyes look to the LORD our God, till he have mercy on us. Have mercy on us, O LORD, have mercy on us, for we have had more than enough of contempt. Too long our soul has been sated with the scorn of those who are at ease, The contempt of the proud. If had not been the LORD who was on our side let Israel say if the LORD had not been on our side when men rose up against us, Then they would have swallowed us alive When their anger was kindled against us. Then the flood would have swept us away The torrent would have gone over us, the raging waters Blessed be the Lord, who has not given us as prey to their teeth. We have escaped as a bird out of the snare of the fowlers The snare has been broken, and we have escaped. Our help is in the name of the LORD,Who made heaven and earth.",
+    "slavonic": "...",
+    "id": "3d081f6c-9472-4354-a925-c5bebab25733"
+  },
+  {
+    "section": "first_antiphon",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "+Glory to the Father, and to the Son, and to the Holy Spirit, now and ever and unto ages of ages. Amen.",
+    "slavonic": "...",
+    "id": "1228e10d-5df4-4b56-a1b7-ceacabc91e3f"
+  },
+  {
+    "section": "first_antiphon",
+    "speaker": "Choir",
+    "type": "response",
+    "english": "Alleluia, Alleluia, Alleluia, +Glory to Thee, O God (x3).",
+    "slavonic": "...",
+    "id": "2d38fe72-4f7f-4d4f-b454-b46b44c3836d"
   }
 ]
