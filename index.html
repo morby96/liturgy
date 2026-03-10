@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <title>Orthodox Liturgies</title>
@@ -7,7 +8,7 @@
 <style>
 
 body{
-font-family:Georgia,serif;
+font-family: Georgia, serif;
 margin:0;
 background:#fafafa;
 }
@@ -17,13 +18,24 @@ text-align:center;
 padding:20px 0;
 }
 
+.controls{
+text-align:center;
+margin-bottom:20px;
+}
+
+button,select{
+padding:6px 12px;
+margin:5px;
+font-size:1em;
+}
+
 .container{
 display:flex;
 min-height:100vh;
 }
 
 .sidebar{
-width:220px;
+width:230px;
 background:#eee;
 padding:20px;
 box-sizing:border-box;
@@ -63,13 +75,36 @@ font-weight:bold;
 margin-bottom:5px;
 }
 
+/* Speaker Colors /
+
+.speaker.deacon{
+color:#0b4f6c;
+}
+
 .speaker.priest{
 color:#6b0000;
+}
+
+.speaker.bishop{
+color:#5a2a83;
 }
 
 .speaker.people{
 color:#003366;
 }
+
+.speaker.choir{
+color:#1f6f3e;
+}
+
+/ Rubrics /
+
+.rubric{
+font-style:italic;
+color:#555;
+}
+
+/ Text columns /
 
 .text-columns{
 display:flex;
@@ -82,7 +117,7 @@ flex:1;
 
 .slavonic{
 font-style:italic;
-color:#555;
+color:#444;
 }
 
 hr{
@@ -91,16 +126,7 @@ border-top:1px solid #e0e0e0;
 margin:18px 0;
 }
 
-.controls{
-text-align:center;
-margin-bottom:20px;
-}
-
-button,select{
-padding:6px 12px;
-margin:5px;
-font-size:1em;
-}
+/ Mobile /
 
 @media(max-width:800px){
 
@@ -153,6 +179,7 @@ flex-direction:column;
 
 </div>
 
+
 <script>
 
 let entries=[]
@@ -160,19 +187,23 @@ let currentLanguage="side"
 
 
 function setLanguage(lang){
+
 currentLanguage=lang
 renderEntries()
+
 }
 
 
 function capitalize(str){
+
 return str.charAt(0).toUpperCase()+str.slice(1).toLowerCase()
+
 }
 
 
 function loadLiturgy(file){
 
-fetch(file+"?cacheBust="+Date.now())
+fetch(file+"?v="+Date.now())
 
 .then(r=>r.json())
 
@@ -181,7 +212,6 @@ fetch(file+"?cacheBust="+Date.now())
 entries=data
 
 generateSidebar()
-
 renderEntries()
 
 })
@@ -189,7 +219,6 @@ renderEntries()
 .catch(e=>{
 
 document.getElementById("content").innerText="Error loading liturgy."
-
 console.error(e)
 
 })
@@ -200,7 +229,6 @@ console.error(e)
 function generateSidebar(){
 
 const sidebar=document.getElementById("sidebar")
-
 sidebar.innerHTML=""
 
 const seen=new Set()
@@ -215,7 +243,7 @@ const link=document.createElement("a")
 
 link.href="#"+entry.section
 
-link.textContent=entry.section_title || entry.section.replace(/_/g," ")
+link.textContent=entry.section_title || entry.section.replace(//g," ")
 
 sidebar.appendChild(link)
 
@@ -243,18 +271,21 @@ currentSection=entry.section
 const header=document.createElement("div")
 
 header.className="section-title"
-
 header.id=currentSection
 
-header.textContent=entry.section_title || entry.section.replace(/_/g," ")
+header.textContent=entry.section_title || entry.section.replace(//g," ")
 
 container.appendChild(header)
 
 }
 
 const entryDiv=document.createElement("div")
-
 entryDiv.className="entry"
+
+
+/ Speaker label (not for rubric) /
+
+if(entry.speaker && entry.speaker.toLowerCase() !== "rubric"){
 
 const speaker=document.createElement("div")
 
@@ -264,19 +295,31 @@ speaker.textContent=capitalize(entry.speaker)
 
 entryDiv.appendChild(speaker)
 
-const columns=document.createElement("div")
+}
 
+
+const columns=document.createElement("div")
 columns.className="text-columns"
 
 const eng=document.createElement("div")
-
-eng.textContent=entry.english
+eng.textContent=entry.english || ""
 
 const slav=document.createElement("div")
+slav.textContent=entry.slavonic || ""
 
-slav.className="slavonic"
 
-slav.textContent=entry.slavonic
+if(entry.speaker && entry.speaker.toLowerCase()==="rubric"){
+
+eng.classList.add("rubric")
+slav.classList.add("rubric")
+
+}
+else{
+
+slav.classList.add("slavonic")
+
+}
+
 
 if(currentLanguage==="english"){
 
@@ -293,7 +336,6 @@ columns.appendChild(slav)
 else{
 
 columns.appendChild(eng)
-
 columns.appendChild(slav)
 
 }
@@ -309,9 +351,12 @@ container.appendChild(document.createElement("hr"))
 }
 
 
+/ load first liturgy */
+
 loadLiturgy("chrysostom.json")
 
 </script>
 
 </body>
+
 </html>
