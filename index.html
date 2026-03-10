@@ -75,7 +75,7 @@ font-weight:bold;
 margin-bottom:5px;
 }
 
-/* Speaker Colors /
+/* Speaker Colors */
 
 .speaker.deacon{
 color:#0b4f6c;
@@ -97,14 +97,14 @@ color:#003366;
 color:#1f6f3e;
 }
 
-/ Rubrics /
+/* Rubrics */
 
 .rubric{
 font-style:italic;
 color:#555;
 }
 
-/ Text columns /
+/* Text columns */
 
 .text-columns{
 display:flex;
@@ -126,7 +126,7 @@ border-top:1px solid #e0e0e0;
 margin:18px 0;
 }
 
-/ Mobile /
+/* Mobile */
 
 @media(max-width:800px){
 
@@ -233,7 +233,7 @@ const link=document.createElement("a")
 
 link.href="#"+entry.section
 
-link.textContent=entry.section_title || entry.section.replace(//g," ")
+link.textContent=entry.section_title || entry.section.replace(/_/g," ")
 
 sidebar.appendChild(link)
 
@@ -270,7 +270,7 @@ container.appendChild(header)
 const entryDiv=document.createElement("div")
 entryDiv.className="entry"
 
-/ Speaker label (not for rubric) */
+/* Speaker label (not for rubric) */
 
 if(entry.speaker && entry.speaker.toLowerCase() !== "rubric"){
 
