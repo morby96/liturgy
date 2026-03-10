@@ -149,7 +149,6 @@ flex-direction:column;
 </style>
 </head>
 
-
 <body>
 
 <h1>Orthodox Liturgies</h1>
@@ -179,27 +178,19 @@ flex-direction:column;
 
 </div>
 
-
 <script>
 
 let entries=[]
 let currentLanguage="side"
 
-
 function setLanguage(lang){
-
 currentLanguage=lang
 renderEntries()
-
 }
-
 
 function capitalize(str){
-
 return str.charAt(0).toUpperCase()+str.slice(1).toLowerCase()
-
 }
-
 
 function loadLiturgy(file){
 
@@ -224,7 +215,6 @@ console.error(e)
 })
 
 }
-
 
 function generateSidebar(){
 
@@ -253,11 +243,9 @@ sidebar.appendChild(link)
 
 }
 
-
 function renderEntries(){
 
 const container=document.getElementById("content")
-
 container.innerHTML=""
 
 let currentSection=""
@@ -282,8 +270,7 @@ container.appendChild(header)
 const entryDiv=document.createElement("div")
 entryDiv.className="entry"
 
-
-/ Speaker label (not for rubric) /
+/ Speaker label (not for rubric) */
 
 if(entry.speaker && entry.speaker.toLowerCase() !== "rubric"){
 
@@ -297,7 +284,6 @@ entryDiv.appendChild(speaker)
 
 }
 
-
 const columns=document.createElement("div")
 columns.className="text-columns"
 
@@ -306,7 +292,6 @@ eng.textContent=entry.english || ""
 
 const slav=document.createElement("div")
 slav.textContent=entry.slavonic || ""
-
 
 if(entry.speaker && entry.speaker.toLowerCase()==="rubric"){
 
@@ -320,19 +305,16 @@ slav.classList.add("slavonic")
 
 }
 
-
 if(currentLanguage==="english"){
 
 columns.appendChild(eng)
 
 }
-
 else if(currentLanguage==="slavonic"){
 
 columns.appendChild(slav)
 
 }
-
 else{
 
 columns.appendChild(eng)
@@ -349,9 +331,6 @@ container.appendChild(document.createElement("hr"))
 })
 
 }
-
-
-/ load first liturgy */
 
 loadLiturgy("chrysostom.json")
 
